@@ -798,7 +798,7 @@ def kepler_single_comp_dr25(data):
     #  Then call DEMod.generate_detection_eff_grid only here to tailor it
     #  for the target.  Instantiating the kepler_detection_efficiency_model_data
     #    for every target is a waste of time.
-    DEMod = kepler_detection_efficiency_model_data()
+    DEMod = kepler_detection_efficiency_model_data(filePath=data.planet_detection_metric_path)
     # Generate Detection Efficiency Function tailored for target
     DEMod = DEMod.generate_detection_eff_grid(data.rstar, data.cdppSlopeLong, \
                 data.cdppSlopeShort, data.dutycycle, data.dataspan)
